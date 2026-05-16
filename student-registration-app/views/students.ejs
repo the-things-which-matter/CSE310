@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registered Students</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/students">Students</a>
+        <a href="/about">About</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Registered Students</h1>
+
+            <% if (students.length===0) { %>
+                <p>No students registered yet.</p>
+                <% } %>
+
+                    <ul>
+                        <% students.forEach(student=> { %>
+
+                            <li>
+                                <strong>Name:</strong>
+                                <%= student.name %>
+                                    <br>
+                                    <strong>Course:</strong>
+                                    <%= student.course %>
+                            </li>
+
+                            <% }) %>
+                    </ul>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

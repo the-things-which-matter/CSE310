@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/students">Students</a>
+        <a href="/about">About</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Student Registration</h1>
+
+            <form action="/register" method="POST" id="studentForm">
+
+                <div id="studentsContainer">
+
+                    <div class="student-entry">
+
+                        <label>Student Name:</label>
+                        <input type="text" name="name[]" required>
+
+                        <label>Course:</label>
+                        <input type="text" name="course[]" required>
+
+                        <hr>
+
+                    </div>
+
+                </div>
+
+                <button type="button" onclick="addStudent()">
+                    Add Student
+                </button>
+
+                <button type="submit">
+                    Register Students
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        /*
+        Adds another student input section.
+        */
+        function addStudent() {
+
+            const container = document.getElementById("studentsContainer");
+
+            const newStudent = document.createElement("div");
+
+            newStudent.classList.add("student-entry");
+
+            newStudent.innerHTML = `
+                <label>Student Name:</label>
+                <input type="text" name="name[]" required>
+
+                <label>Course:</label>
+                <input type="text" name="course[]" required>
+
+                <hr>
+            `;
+
+            container.appendChild(newStudent);
+        }
+
+    </script>
+
+</body>
+
+</html>
